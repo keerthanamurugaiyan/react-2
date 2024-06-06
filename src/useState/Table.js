@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { deleteUser, getUser } from './Api';
 
 function Table() {
 
@@ -8,12 +9,12 @@ function Table() {
   const nav= useNavigate();
 
   useEffect (() => {
-    axios.get('https://65b77a0946324d531d54ac37.mockapi.io/Employeeregistor/users')
+   getUser()
   .then((response)=>{setItems(response.data)})
   .catch((error)=>console.log("fetch error",error))
   })
   const deleteItem=(id)=>{
-    axios.delete(`https://65b77a0946324d531d54ac37.mockapi.io/Employeeregistor/users/${id}`)
+    deleteUser(id)
     .then(()=>{setItems(items.filter(item=>item.id !== id))})
     .catch((error)=>{console.log("delete error",error)})
 
@@ -25,13 +26,13 @@ nav(`/edit/${id}`)
   return (
     <div className=''>
       <h1 className='text-center mt-5'>Customer View</h1>
-      <table className='table mt-5 table-bordered container col-5 table-striped'>
+      <table className='table mt-5 table-bordered container table-striped'>
         <thead className='text-center'>
-          <tr className='col-6'>
-            <th className='bg-secondary col-4'>Name</th>
-            <th className='bg-secondary col-4'>Email</th>
-            <th className='bg-secondary col-4'>Password</th>
-            <th className='bg-secondary col-4'>Actions</th>
+          <tr className=''>
+            <th className='bg-info'>Name</th>
+            <th className='bg-info'>Email</th>
+            <th className='bg-info'>Password</th>
+            <th className='bg-info'>Actions</th>
           </tr>
         </thead>
 
@@ -41,15 +42,15 @@ nav(`/edit/${id}`)
               <td>{item.fname}</td>
               <td>{item.email}</td>
               <td>{item.password}</td>
-              <td>
-                <button onClick={() => deleteItem(item.id)} className='btn btn-danger'>Delete</button>
-                <button onClick={() => editItem(item.id)} className='btn btn-danger'>edit</button>
+              <td className=''>
+                <button onClick={() => editItem(item.id)} className='btn btn-secondary'>edit</button>
+                <button onClick={() => deleteItem(item.id)} className='btn btn-secondary mx-2'>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button className='btn btn-info' onClick={ () =>nav("/") }>Back</button>
+      <button className='btn btn-primary mt-3 mx-5' onClick={ () =>nav("/") }>Back</button>
     </div>
   );
 }

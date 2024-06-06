@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 import Form from './useState/Form';
 import Table from './useState/Table';
 import Edit from './useState/Edit';
+import './useState/Style.css';
+
 // import Form from './useState/Form';
 // src/index.js or src/index.tsx
 // import 'bootstrap/dist/css/bootstrap.min.css';

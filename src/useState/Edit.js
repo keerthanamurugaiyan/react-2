@@ -1,22 +1,22 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useEffect, useState } from 'react'
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import { editUser, updateUser } from './Api';
 
 function Edit() {
 
-  
     const [fname, setFname] = useState ('');
     const [email, setEmail] = useState ('');
     const [password, setPassword] = useState('');
     const nav=useNavigate();
     const {id}=useParams();
     useEffect(()=>{
-        axios.get(`https://65b77a0946324d531d54ac37.mockapi.io/Employeeregistor/users/${id}`)
-  .then((response)=>{
-    setFname(response.data.fname);
-    setEmail(response.data.email);
-    setPassword(response.data.password);
+        editUser(id)
+    .then((response)=>{
+    setFname(response.fname);
+    setEmail(response.email);
+    setPassword(response.password);
 })
   .catch((error)=>console.log("fetch error",error))
   },[id])
@@ -25,7 +25,7 @@ function Edit() {
     const updateData = (e)=>{
         e.preventDefault();
         const newData ={fname, email, password};
-        axios.put(`https://65b77a0946324d531d54ac37.mockapi.io/Employeeregistor/users/${id}`, newData)
+        updateUser(id,newData)
         .then(()=>{
         nav("/view")
         setFname('')
