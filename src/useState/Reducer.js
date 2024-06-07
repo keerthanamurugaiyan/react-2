@@ -1,4 +1,3 @@
-// reducers.js
 import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./Type";
 
 const initialState = {

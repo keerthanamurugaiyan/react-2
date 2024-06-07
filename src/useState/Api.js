@@ -17,13 +17,12 @@ export const createUser = async(newData) =>{
 };
 
 // gettable
-export const getUser = async() =>{
-    try{
+export const getUser = async () => {
+    try {
         const response = await axios.get(Api);
-        return response.data;
-    }
-    catch (error){
-        console.log(error);
+        return response;
+    } catch (error) {
+        throw error; // Throw the error to be caught by the caller
     }
 }
 
@@ -40,7 +39,7 @@ export const deleteUser = async(id) =>{
 // Edit
 export const editUser = async(id) =>{
     try{
-        const response=await axios.put(`${Api}/${id}`)
+        const response=await axios.get(`${Api}/${id}`)
         return response.data;
     }
     catch (error){
@@ -49,14 +48,13 @@ export const editUser = async(id) =>{
 }
 
 // update
-export const updateUser = async(id,newData) =>{
-    try{
-        const response=await axios.update(`${Api}/${id}`,newData)
+export const updateUser = async (id, newData) => {
+    try {
+        const response = await axios.put(`${Api}/${id}`, newData);
         return response.data;
+    } catch (error) {
+        console.log(error);
     }
-    catch (error){
-        console.log(error)
-    }
-}
+};
 
 
