@@ -3,6 +3,14 @@
     margin: 0%;
 }
 
+.usestate{
+  /* display: none; */
+}
+
+#state:hover .usestate{
+  /* display: block; */
+}
+
 body{
     background-color: indigo !important;
 }
@@ -167,6 +175,7 @@ input{
     }
     87% {
       box-shadow: .2em -.2em 0 0 currentcolor;
-    } */
+    }
+  }  */
 
 

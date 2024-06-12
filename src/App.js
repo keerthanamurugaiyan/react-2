@@ -4,6 +4,7 @@ import Form from './useState/Form';
 import Table from './useState/Table';
 import Edit from './useState/Edit';
 import './useState/Style.css';
+import Nav from './useState/Nav';
 // import Spinner from './useState/Spinner';
 // import { Spinner } from 'react-bootstrap';
 
@@ -18,7 +19,7 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
-
+        <Route path='/nav' element = {<Nav/>} ></Route>
         <Route path='/' element = {<Form/>} ></Route>
         <Route path='/edit/:id' element = {<Edit/>} ></Route>
         <Route path='/view' element = {<Table/>} ></Route>
