@@ -1,10 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import './App.css';
-import Form from './useState/Form';
-import Table from './useState/Table';
-import Edit from './useState/Edit';
-import './useState/Style.css';
-import Nav from './useState/Nav';
+
+
+// useState............
+// import Form from './useState/Form';
+// import Table from './useState/Table';
+// import Edit from './useState/Edit';
+// import './useState/Style.css';
+// import Nav from './useState/Nav';
+
+
+
+// useReducer..........
+import Create from './UseReducer/Create';
+import { useReducer, useState } from 'react';
+import Loader from './UseReducer/Loader';
 // import Spinner from './useState/Spinner';
 // import { Spinner } from 'react-bootstrap';
 
@@ -19,11 +29,14 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
-        <Route path='/nav' element = {<Nav/>} ></Route>
+        {/* <Route path='/nav' element = {<Nav/>} ></Route>
         <Route path='/' element = {<Form/>} ></Route>
         <Route path='/edit/:id' element = {<Edit/>} ></Route>
-        <Route path='/view' element = {<Table/>} ></Route>
+        <Route path='/view' element = {<Table/>} ></Route> */}
         {/* <Route path='/spinner' element = {<Spinner/>} ></Route> */}
+
+        <Route path='/create' element = {<Create/>} ></Route>
+        <Route path='/loader' element = {<Loader/>} ></Route>
 
       </Routes>
       </BrowserRouter>
