@@ -146,10 +146,9 @@ function Table() {
           )}
         </tbody>
       </table>
-      <button className='btn btn-primary mt-3 mx-5' onClick={() => navigate("/")}>Back</button>
+      <button className='btn btn-primary mt-3 mx-5 px-4' onClick={() => navigate("/")}>Back</button>
     </div>
   );
 }
 
 export default Table;
-

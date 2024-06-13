@@ -53,8 +53,8 @@ function Edit() {
     return (
         <>
             {spinner && <Spinner />} 
-            <div className="d-flex justify-content-center align-self-center">
-                <form className="form w-25 p-4 rounded-5 mt-5" onSubmit={formik.handleSubmit}>
+            <div className="d-flex justify-content-center align-self-center mt-5 p-4">
+                <form className="form w-25 p-5 rounded-5 mt-5" onSubmit={formik.handleSubmit}>
                     <h1 className="text-center text-light">Edit User</h1>
 
                     <label className="form-label text-light fw-bold mt-3" htmlFor="fname">Name:</label>
