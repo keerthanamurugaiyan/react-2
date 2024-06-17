@@ -74,6 +74,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteUser, getUser } from './Api';
+// import './useState/Style.css';
 
 function Table() {
   const [items, setItems] = useState([]);

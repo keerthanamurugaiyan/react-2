@@ -20,7 +20,7 @@ export const createUser = async(newData) =>{
 export const getUser = async () => {
     try {
         const response = await axios.get(Api);
-        return response;
+        return response.data;
     } catch (error) {
         throw error; // Throw the error to be caught by the caller
     }

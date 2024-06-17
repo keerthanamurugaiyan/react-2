@@ -1,4 +1,5 @@
 import React from 'react'
+import './UseReducer/Style.css';
 
 function Loader() {
     return (

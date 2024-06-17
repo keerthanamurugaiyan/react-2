@@ -1,11 +1,11 @@
 import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./Type";
 
-const initialState = {
+export const initialState = {
   items: [],
   selectedItem: null,
 };
 
-const rootReducer = (state = initialState, action) => {
+const Reducer = (state, action) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -25,9 +25,10 @@ const rootReducer = (state = initialState, action) => {
         ),
       };
     case GET_ITEM:
+      console.log(action.payload);
       return {
         ...state,
-        selectedItem: action.payload,
+        items: [...action.payload],
       };
     case GET_ITEM_ID:
       return {
@@ -39,4 +40,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default Reducer;
