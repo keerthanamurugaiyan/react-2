@@ -1,11 +1,13 @@
-import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./Type";
+// import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./Type";
+
+import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./ForType";
 
 const initialState = {
   items: [],
   selectedItem: null,
 };
 
-const rootReducer = (state = initialState, action) => {
+const ForReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -39,4 +41,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default ForReducer;

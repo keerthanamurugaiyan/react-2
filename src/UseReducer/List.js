@@ -1,8 +1,9 @@
 import React, { useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Reducer, { initialState } from './Reducer';
-import { getUser } from './Api';
-import { deleteItem, getItem } from './Action';
+import { deleteUser, getUser } from './Api';
+import {  deleteItem, getItem } from './Action';
+import "./UseReducer.css";
 
 function List() {
   const [state, dispatch] = useReducer(Reducer, initialState);
@@ -22,10 +23,11 @@ function List() {
   console.log(state.items);
 
   const handleDelete = (id) => {
+    deleteUser(id)
     try {
       dispatch(deleteItem(id));
-    } catch (error) {
-      console.log(error);
+    } catch (error)  {
+      console.log("delete error" , error);
     }
   };
 
@@ -65,7 +67,7 @@ function List() {
           )}
         </tbody>
       </table>
-      <button className='btn btn-primary mt-3 mx' onClick={() => navigate("/")}>Back</button>
+      <button className='btn btn-primary mt-3 mx-5' onClick={() => navigate("/")}>Back</button>
     </div>
   );
 }

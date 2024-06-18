@@ -15,10 +15,8 @@ form{
 
 
 
-
-
-/* spinner */
-.spinner-overlay {
+/* Loader */
+.loader-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +29,7 @@ form{
     z-index: 9999;
   }
 
-.loader {
+  .loader {
     transform: rotateZ(45deg);
     perspective: 1000px;
     border-radius: 50%;
@@ -102,4 +100,4 @@ form{
     87% {
       box-shadow: .2em -.2em 0 0 currentcolor;
     }
-  }
+  } 

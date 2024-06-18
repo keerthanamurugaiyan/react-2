@@ -1,23 +1,27 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import './App.css';
+
+// import Nav from './Component/Navigate/Nav';
+
+// Formik
+import ForForm from './Component/Formik/ForForm';
+import ForTable from './Component/Formik/ForTable';
+import ForEdit from './Component/Formik/ForEdit';
+
+// import Spinner from './Component/Formik/ForSpinner';
 
 
 // useState............
-import Form from './useState/Form';
-import Table from './useState/Table';
-import Edit from './useState/Edit';
-
-// import Nav from './useState/Nav';
+// import Form from './useState/Form';
+// import Table from './useState/Table';
+// import Edit from './useState/Edit';
 
 
 
 // useReducer..........
-import Create from './UseReducer/Create';
+// import Create from './UseReducer/Create';
 // import { useReducer, useState } from 'react';
-// import Loader from './UseReducer/Loader';
-
-import List from './UseReducer/List';
-import Update from './UseReducer/Update';
+// import List from './UseReducer/List';
+// import Update from './UseReducer/Update';
 
 
 // import Spinner from './useState/Spinner';
@@ -34,16 +38,26 @@ function App() {
     <>
       
       <BrowserRouter>
+      {/* <Nav/> */}
       <Routes>
-        {/* <Route path='/nav' element = {<Nav/>} ></Route> */}
-        <Route path='/state' element = {<Form/>} ></Route>
+
+        {/* Formik */}
+        <Route path='/forform' element = {<ForForm />} ></Route>
+        <Route path='/fortable' element = {<ForTable/>} ></Route>
+        <Route path='/foredit/:id' element = {<ForEdit/>} ></Route>
+        {/* <Route path='/spinne' element = {<ForSpinner/>} ></Route> */}
+
+        {/* UseState */}
+        {/* <Route path='/state' element = {<Form/>} ></Route>
         <Route path='/edit/:id' element = {<Edit/>} ></Route>
-        <Route path='/view' element = {<Table/>} ></Route> 
+        <Route path='/view' element = {<Table/>} ></Route>  */}
         {/* <Route path='/spinner' element = {<Spinner/>} ></Route> */}
 
-        <Route path='/' element = {<Create/>} ></Route>
+       
+       {/* UseReducer */}
+        {/* <Route path='/' element = {<Create/>} ></Route>
         <Route path='/reducer/list' element = {<List/>} ></Route>
-        <Route path = '/reducer/edit/:id' element = {<Update/>} ></Route>
+        <Route path = '/reducer/edit/:id' element = {<Update/>} ></Route> */}
         {/* <Route path='/loader' element = {<Loader/>} ></Route>  */}
 
       </Routes>
@@ -53,6 +67,8 @@ function App() {
   )
 
 }
+
+
 
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // // import Form from './Redux/Form';

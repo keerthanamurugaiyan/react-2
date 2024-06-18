@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { editUser, updateUser } from './Api';
+import { editUser, updateUser } from './ForApi';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Spinner from './Spinner';
-// import './useState/Style.css';
+import Spinner from './ForSpinner';
+import "./Formik.css"
 
-function Edit() {
+
+
+function ForEdit() {
     const nav = useNavigate();
     const { id } = useParams();
     const [spinner, setSpinner] = useState(false);
@@ -115,4 +117,4 @@ function Edit() {
     );
 }
 
-export default Edit;
+export default ForEdit;

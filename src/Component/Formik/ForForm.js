@@ -3,12 +3,12 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUser } from './Api';
-import Spinner from './Spinner';
-// import './useState/Style.css';
-// import './useState/Style.css';
+import { createUser } from './ForApi';
+import Spinner from './ForSpinner';
+import "./Formik.css";
 
-function Form() {
+
+function ForForm() {
     const navigate = useNavigate();
     const [spinner, setSpinner] =useState(false)
 
@@ -29,7 +29,7 @@ function Form() {
             setSpinner(true)
             try {
                 await createUser(values);
-                navigate('/view');
+                navigate('/fortable');
                 resetForm();
                 setSpinner(false)
             } catch (error) {
@@ -100,10 +100,12 @@ function Form() {
                 <div className="text-center mt-5">
                     <button type="submit" className="btn btn-primary fw-bold">Submit</button>
                 </div>
+            
             </form>
         </div>
+        
         </>
     );
 }
 
-export default Form;
+export default ForForm;
