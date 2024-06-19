@@ -1,19 +1,21 @@
 import React, { useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Reducer, { initialState } from './Reducer';
-import { deleteUser, getUser } from './Api';
-import {  deleteItem, getItem } from './Action';
-import "./UseReducer.css";
+import ReReducer, { initialState } from './ReReducer';
+import { deleteUser, getUser } from '../../Api/MockApi';
+import { deleteItem, getItem } from './ReAction';
+import "../ReducerStyle/Reducer.css";
 
-function List() {
-  const [state, dispatch] = useReducer(Reducer, initialState);
+
+
+function ReTable() {
+  const [state, dispatch] = useReducer(ReReducer, initialState);
   const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await getUser();
-        dispatch(getItem(response));
+        dispatch(getItem(response.data));
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -72,4 +74,4 @@ function List() {
   );
 }
 
-export default List;
+export default ReTable;

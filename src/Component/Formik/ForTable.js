@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { deleteUser, getUser } from './ForApi';
+import { deleteUser, getUser } from '../Api/MockApi';
 import "./Formik.css";
+
 
 
 function ForTable() {

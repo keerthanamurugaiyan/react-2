@@ -2,11 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // import Nav from './Component/Navigate/Nav';
 
-// Formik
+// Formik.............
 import ForForm from './Component/Formik/ForForm';
 import ForTable from './Component/Formik/ForTable';
 import ForEdit from './Component/Formik/ForEdit';
-
 // import Spinner from './Component/Formik/ForSpinner';
 
 
@@ -16,9 +15,10 @@ import ForEdit from './Component/Formik/ForEdit';
 // import Edit from './useState/Edit';
 
 
-
-// useReducer..........
-// import Create from './UseReducer/Create';
+// useReducer...........
+import ReForm from './Component/UseReducer/WithApi/ReForm';
+import ReTable from './Component/UseReducer/WithApi/ReTable';
+import ReEdit from './Component/UseReducer/WithApi/ReEdit';
 // import { useReducer, useState } from 'react';
 // import List from './UseReducer/List';
 // import Update from './UseReducer/Update';
@@ -47,6 +47,7 @@ function App() {
         <Route path='/foredit/:id' element = {<ForEdit/>} ></Route>
         {/* <Route path='/spinne' element = {<ForSpinner/>} ></Route> */}
 
+
         {/* UseState */}
         {/* <Route path='/state' element = {<Form/>} ></Route>
         <Route path='/edit/:id' element = {<Edit/>} ></Route>
@@ -55,9 +56,9 @@ function App() {
 
        
        {/* UseReducer */}
-        {/* <Route path='/' element = {<Create/>} ></Route>
-        <Route path='/reducer/list' element = {<List/>} ></Route>
-        <Route path = '/reducer/edit/:id' element = {<Update/>} ></Route> */}
+        <Route path='/' element = {<ReForm/>} ></Route>
+        <Route path='/reducer/table' element = {<ReTable/>} ></Route>
+        <Route path = '/reducer/edit/:id' element = {<ReEdit/>} ></Route> 
         {/* <Route path='/loader' element = {<Loader/>} ></Route>  */}
 
       </Routes>

@@ -8,7 +8,7 @@ export const createUser = async(newData) =>{
 
     try{
 
-        const response = await  axios.post(Api,newData);
+        const response = await  axios.post(Api,newData); 
         return response.data;
     } 
     catch (error){ 

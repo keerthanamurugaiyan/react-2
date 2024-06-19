@@ -1,13 +1,16 @@
-import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./Type";
+
+import { ADD_ITEM, DELETE_ITEM, GET_ITEM, GET_ITEM_ID, UPDATE_ITEM } from "./ReType";
 
 export const initialState = {
   items: [],
   selectedItem: null,
 };
 
-const Reducer = (state, action) => {
+const ReReducer = (state, action) => {
+  console.log(action);
   switch (action.type) {
     case ADD_ITEM:
+      console.log('add-item',action.payload)
       return {
         ...state,
         items: [...state.items, action.payload],
@@ -40,4 +43,4 @@ const Reducer = (state, action) => {
   }
 };
 
-export default Reducer;
+export default ReReducer;

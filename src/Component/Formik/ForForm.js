@@ -3,9 +3,10 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUser } from './ForApi';
+import { createUser } from '../Api/MockApi';
 import Spinner from './ForSpinner';
 import "./Formik.css";
+
 
 
 function ForForm() {
@@ -46,11 +47,11 @@ function ForForm() {
         {spinner && <Spinner/> }
         
         <div className="d-flex justify-content-center align-self-center mt-5 p-">
-            <form className="form w-25 p-4 rounded-5 mt-5" onSubmit={formik.handleSubmit}>
-                <h1 className="text-center text-light">Use State</h1>
+            <form className="form w- p-4 rounded-5 mt-4" onSubmit={formik.handleSubmit}>
+                <h1 className="text-center text-light">Formik</h1>
 
                 <label className="form-label text-light fw-bold mt-3" htmlFor="fname">Name:</label>
-                <input
+                <input 
                     className="form-control col-6"
                     type="text"
                     placeholder="Enter Your Name"

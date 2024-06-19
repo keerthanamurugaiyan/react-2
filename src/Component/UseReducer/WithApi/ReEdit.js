@@ -1,14 +1,13 @@
 import React, { Fragment, useEffect, useReducer, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Reducer, { initialState } from './Reducer';
-import { editUser, updateUser } from './Api';
-import { getitembyid, updateItem } from './Action';
-// import { createUser } from './Api';
-// import { addItem, updateItem } from './Action';
-import "./UseReducer.css";
+import ReReducer, { initialState } from './ReReducer';
+import { editUser, updateUser } from '../../Api/MockApi';
+import { getitembyid, updateItem } from './ReAction';
+import "../ReducerStyle/Reducer.css";
 
-function Update() {
-  const [state, dispatch] = useReducer(Reducer, initialState);
+
+function ReEdit() {
+  const [state, dispatch] = useReducer(ReReducer, initialState);
   const navigate = useNavigate();
   const [fname, setFname] = useState('');
   const [email, setEmail] = useState('');
@@ -20,7 +19,7 @@ function Update() {
     try {
       const response = await updateUser(id,{ fname, email, password });
       dispatch(updateItem(response));
-      navigate('/reducer/list');
+      navigate('/reducer/table');
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +72,7 @@ function Update() {
           />
 
           <div className="text-center mt-5">
-            <button type="submit" className="btn btn-primary fw-bold">Submit</button>
+            <button type="submit" className="btn btn-primary fw-bold">Update</button>
           </div>
         </form>
       </div>
@@ -81,4 +80,4 @@ function Update() {
   );
 }
 
-export default Update;
+export default ReEdit;

@@ -1,13 +1,14 @@
 import React, { Fragment, useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Reducer, { initialState } from './Reducer';
-import { createUser } from './Api';
-import { addItem } from './Action';
-import Loader from './Loader';
-import "./UseReducer.css";
+import ReReducer, { initialState } from './ReReducer';
+import { createUser } from '../../Api/MockApi';
+import { addItem } from './ReAction';
+import Loader from '../ReducerStyle/Loader';
+import "../ReducerStyle/Reducer.css";
 
-function Create() {
-  const [state, dispatch] = useReducer(Reducer, initialState);
+
+function ReForm() {
+  const [state, dispatch] = useReducer(ReReducer, initialState);
   const navigate = useNavigate();
   const [fname, setFname] = useState('');
   const [email, setEmail] = useState('');
@@ -44,11 +45,12 @@ function Create() {
       const response = await createUser({ fname, email, password });
       setLoder(false);
       dispatch(addItem(response));
-      navigate('/reducer/list');
     } catch (error) {
       setLoder(false);
       console.log(error);
     }
+   navigate('/reducer/table');
+  
   };
 
   return (
@@ -103,7 +105,7 @@ function Create() {
   );
 }
 
-export default Create;
+export default ReForm;
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./UseReducer.css";
+import "../ReducerStyle/Reducer.css";
 
 function Loader() {
     return (
