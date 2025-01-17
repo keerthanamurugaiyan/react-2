@@ -1,16 +1,16 @@
-import React from 'react';
-import "../ReducerStyle/Reducer.css";
+// import React from 'react';
+// import "../ReducerStyle/Reducer.css";
 
-function Loader() {
-    return (
-        <>
+// function Loader() {
+//     return (
+//         <>
 
-            <div className='loader-overlay'>
-                <span class="loader"></span>
-            </div>
+//             <div className='loader-overlay'>
+//                 <span class="loader"></span>
+//             </div>
 
-        </>
-    )
-}
+//         </>
+//     )
+// }
 
-export default Loader
+// export default Loader

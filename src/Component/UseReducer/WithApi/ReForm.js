@@ -60,7 +60,7 @@ function ReForm() {
     {loader && <Loader/>}
 
       <div className="d-flex justify-content-center align-self-center">
-        <form className="form w-25 p-5 rounded-5 mt-5" onSubmit={handleSubmit}>
+        <form className="form p-4 rounded-5 mt-5" onSubmit={handleSubmit}>
           <h1 className="text-center text-light">Use Reducer</h1>
 
           <label className="form-label text-light fw-bold mt-3">Name:</label>

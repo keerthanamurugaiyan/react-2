@@ -36,7 +36,7 @@ function ForTable() {
   };
 
   const editItem = (id) => {
-    navigate(`/edit/${id}`);
+    navigate(`/foredit/${id}`);
   };
 
   // if (loading) {
