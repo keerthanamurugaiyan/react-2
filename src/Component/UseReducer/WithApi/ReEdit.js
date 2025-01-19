@@ -3,7 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ReReducer, { initialState } from './ReReducer';
 import { editUser, updateUser } from '../../Api/MockApi';
 import { getitembyid, updateItem } from './ReAction';
-import "../ReducerStyle/Reducer.css";
+import Spinner from '../../Spinner/Spinner';
+// import "../ReducerStyle/Reducer.css";
 
 
 function ReEdit() {
@@ -12,6 +13,7 @@ function ReEdit() {
   const [fname, setFname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [spinner, setSpinner] = useState(false);
   const {id} = useParams();
 
   const handleSubmit = async (e) => {
@@ -37,6 +39,9 @@ function ReEdit() {
 
   return (
     <Fragment>
+
+{spinner && <Spinner/>}
+
       <div className="d-flex justify-content-center align-self-center">
         <form className="form p-4 rounded-5 mt-5" onSubmit={handleSubmit}>
           <h1 className="text-center text-light">Use Reducer</h1>

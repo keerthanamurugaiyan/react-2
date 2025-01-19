@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import ReReducer, { initialState } from './ReReducer';
 import { createUser } from '../../Api/MockApi';
 import { addItem } from './ReAction';
-import Loader from '../ReducerStyle/Loader';
-import "../ReducerStyle/Reducer.css";
+import Spinner from '../../Spinner/Spinner';
+// import Loader from '../ReducerStyle/Loader';
+// import Spinner from '../Spinner/Spinner';
+// import "../ReducerStyle/Reducer.css";
 
 
 function ReForm() {
@@ -57,7 +59,7 @@ function ReForm() {
     
     <Fragment>
 
-    {loader && <Loader/>}
+    {loader && <Spinner/>}
 
       <div className="d-flex justify-content-center align-self-center">
         <form className="form p-4 rounded-5 mt-5" onSubmit={handleSubmit}>

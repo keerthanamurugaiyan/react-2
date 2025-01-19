@@ -36,7 +36,7 @@ function ForTable() {
   };
 
   const editItem = (id) => {
-    navigate(`/foredit/${id}`);
+    navigate(`/formik/edit/${id}`);
   };
 
   // if (loading) {
@@ -76,7 +76,7 @@ function ForTable() {
           )}
         </tbody>
       </table>
-      <button className='btn btn-primary mt-3 mx-5 px-4' onClick={() => navigate("/forform")}>Back</button>
+      <button className='btn btn-primary mt-3 mx-5 px-4' onClick={() => navigate("/formik/form")}>Back</button>
     </div>
   );
 }

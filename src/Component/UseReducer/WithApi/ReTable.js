@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ReReducer, { initialState } from './ReReducer';
 import { deleteUser, getUser } from '../../Api/MockApi';
 import { deleteItem, getItem } from './ReAction';
-import "../ReducerStyle/Reducer.css";
+// import "../ReducerStyle/Reducer.css";
 
 
 
@@ -69,7 +69,7 @@ function ReTable() {
           )}
         </tbody>
       </table>
-      <button className='btn btn-primary mt-3 mx-5' onClick={() => navigate("/")}>Back</button>
+      <button className='btn btn-primary mt-3 mx-5' onClick={() => navigate("/reducer/form")}>Back</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Formik.css";
+import "./Spinner.css";
 
-const ForSpinner = () => (
+const Spinner = () => (
 
     <div className="spinner-overlay">
         <span className="loader"></span>
@@ -9,4 +9,4 @@ const ForSpinner = () => (
 )
 
 
-export default ForSpinner 
+export default Spinner 

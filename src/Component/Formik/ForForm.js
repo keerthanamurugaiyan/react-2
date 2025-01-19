@@ -4,7 +4,8 @@ import { useState } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../Api/MockApi';
-import Spinner from './ForSpinner';
+import Spinner from '../Spinner/Spinner';
+// import Spinner from './ForSpinner';
 
 function ForForm() {
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ function ForForm() {
             setSpinner(true);
             try {
                 await createUser(values);
-                navigate('/fortable');
+                navigate('/formik/list');
                 resetForm();
                 setSpinner(false);
             } catch (error) {

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { editUser, updateUser } from '../Api/MockApi';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Spinner from './ForSpinner';
+import Spinner from '../Spinner/Spinner';
 import "./Formik.css"
 
 function ForEdit() {
@@ -30,8 +30,9 @@ function ForEdit() {
             setSpinner(true);
             try {
                 await updateUser(id, values);
-                nav('/view');
+                nav('/formik/list');
                 resetForm();
+                setSpinner(false);
             } catch (error) {
                 console.error(error);
                 alert("Failed to update user. Please try again.");
