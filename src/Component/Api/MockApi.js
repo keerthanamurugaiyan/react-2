@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import Edit from './Edit';
 
 const Api= 'https://65b77a0946324d531d54ac37.mockapi.io/Employeeregistor/users';
 

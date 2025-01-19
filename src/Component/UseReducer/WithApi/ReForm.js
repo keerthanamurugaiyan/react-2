@@ -4,10 +4,6 @@ import ReReducer, { initialState } from './ReReducer';
 import { createUser } from '../../Api/MockApi';
 import { addItem } from './ReAction';
 import Spinner from '../../Spinner/Spinner';
-// import Loader from '../ReducerStyle/Loader';
-// import Spinner from '../Spinner/Spinner';
-// import "../ReducerStyle/Reducer.css";
-
 
 function ReForm() {
   const [state, dispatch] = useReducer(ReReducer, initialState);

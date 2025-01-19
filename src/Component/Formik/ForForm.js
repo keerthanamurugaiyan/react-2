@@ -5,7 +5,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../Api/MockApi';
 import Spinner from '../Spinner/Spinner';
-// import Spinner from './ForSpinner';
 
 function ForForm() {
     const navigate = useNavigate();
