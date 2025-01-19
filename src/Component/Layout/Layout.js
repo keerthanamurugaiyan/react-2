@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header';
+import Navigate from './Navigate';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
     <div>
-      <Header />
+      <Navigate />
       <div className=" d-flex justify-content-center mt-3">
         <Outlet />
       </div>

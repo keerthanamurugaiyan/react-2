@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import ReReducer, { initialState } from './ReReducer';
 import { deleteUser, getUser } from '../../Api/MockApi';
 import { deleteItem, getItem } from './ReAction';
-// import "../ReducerStyle/Reducer.css";
-
-
 
 function ReTable() {
   const [state, dispatch] = useReducer(ReReducer, initialState);

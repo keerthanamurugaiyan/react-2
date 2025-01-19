@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Navigate = () => {
   return (
     <Navbar expand="sm"  className="bg-opacity-75 shadow bg-light">
       <div className="container">
@@ -38,4 +38,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigate;
